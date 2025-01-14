@@ -1,13 +1,13 @@
 <!-- Unit 5 Project
 Requirements
-[  ] <div> and <span>
-[  ] height: and width:
+[x] <div> and <span>
+[x] height: and width:
 [  ] margin: and padding: 
 [  ] Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Flexbox
-[ no ] Feature 2 - Flip Card
+[x] Feature 2 - Flip Card
 [ no ] Feature 3 - Navbar
 [ no ] Feature 4 - Shaking Animation
 [ no ] Feature 5 - Gradient Background
@@ -16,17 +16,101 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Unit 5 Project</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+         background-image: linear-gradient(#A97142,#e09f6e,#eecbb1,#f9efe7,#eecbb1,#e09f6e,#A97142);border: 40px solid transparent;
 
-<head>
-  <title>Unit 5 Project</title>
-  <meta charset="utf-8">
-  <style>
+      }
 
-  </style>
-</head>
-<body>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
- 
+      .main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 70px
+      }
+      .flip-card {
+        background-color: transparent;
+        width: 664px;
+        height: 806px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        
+      }
 
-</body>
+     
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        
+      }
+
+      
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+    
+      .flip-card-back {
+  background-image: linear-gradient(#E6A2A2, #FFF9A9);
+
+        color: white;
+        transform: rotateY(180deg);
+      }
+      
+    
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="https://luckygirlliving.com/wp-content/uploads/2024/03/tea-party-ideas-dainty-tablecloth.jpg"
+              alt="tea party"
+              style="width: 664px; height: 806px" id="tea-party" 
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>You are cordially invited to...</h1>
+            <p>𝒯𝒽𝑒 𝒜𝓃𝓃𝓊𝒶𝓁 𝒲𝒾𝓃𝓉𝑒𝓇 𝒯𝑒𝒶 𝒯𝒾𝓂𝑒 𝒶𝓉 𝓉𝒽𝑒 𝒫𝓁𝒶𝓏𝒶 𝐻𝑜𝓉𝑒𝓁
+            </p>
+            <p>𝕊𝕦𝕟𝕕𝕒𝕪, 𝔻𝕖𝕔𝕖𝕞𝕓𝕖𝕣 𝕋𝕨𝕖𝕟𝕥𝕪 𝕊𝕖𝕔𝕠𝕟𝕕 𝕒𝕥 𝕋𝕖𝕟 𝔸𝕄</p>
+            <p>
+              𝕋𝕙𝕖 ℙ𝕒𝕝𝕞 ℂ𝕠𝕦𝕣𝕥<br> 768 5ᴛʜ ᴀᴠᴇ, ɴᴇᴡ ʏᴏʀᴋ, ɴʏ 10019
+              <br>
+<img src="https://png.pngtree.com/png-vector/20240805/ourmid/pngtree-green-tea-sketch-teapot-with-flower-drawing-png-image_13089643.png"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
